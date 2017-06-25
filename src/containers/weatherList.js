@@ -4,14 +4,15 @@ import { connect } from 'react-redux';
 class WeatherList extends Component{
 
     renderWeather(cityData){
+        const city = cityData.query.results.channel.location.city
         const date = cityData.query.results.channel.item.condition.date
         const temp = cityData.query.results.channel.item.condition.temp
         const text = cityData.query.results.channel.item.condition.text
 
 
         return (
-            <tr key={date}>
-                <td></td>
+            <tr key={city}>
+                <td>{city}</td>
                 <td>{date}</td>
                 <td>{temp}</td>
                 <td>{text}</td>
